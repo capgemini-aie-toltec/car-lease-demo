@@ -359,6 +359,7 @@ if (process.env.VCAP_SERVICES) { // We are running in bluemix
 
 } else { // We are running locally
     let credentials = fs.readFileSync(__dirname + '/credentials.json');
+	console.log('\n[!] Running locally. No bluemix - No fabric');
     credentials = JSON.parse(credentials);
     startup.connectToPeers(chain, credentials.peers);
     startup.connectToCA(chain, credentials.ca);
