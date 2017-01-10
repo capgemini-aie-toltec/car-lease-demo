@@ -19,29 +19,29 @@ config.logo.leasee = {};
 config.logo.scrap_merchant = {};
 
 // Logo size
-config.logo.width = '4em';
-config.logo.height = '1.6em';
+config.logo.width = '16em';
+config.logo.height = '4.3em';
 
 //Main Logo
-config.logo.main.src = 'Icons/IBM_logo.svg';
+config.logo.main.src = 'Icons/AIE_landscape.jpg';
 
 // Regulator Logo
-config.logo.regulator.src = 'Icons/Regulator/IBM_logo.svg';
+config.logo.regulator.src = 'Icons/AIE_landscape.jpg';
 
 // Manufacturer Logo
-config.logo.manufacturer.src = 'Icons/Manufacturer/IBM_logo.svg';
+config.logo.manufacturer.src = 'Icons/AIE_landscape.jpg';
 
 // Dealership Logo
-config.logo.dealership.src = 'Icons/Dealership/IBM_logo.svg';
+config.logo.dealership.src = 'Icons/AIE_landscape.jpg';
 
 // Lease Company Logo
-config.logo.lease_company.src = 'Icons/Lease_Company/IBM_logo.svg';
+config.logo.lease_company.src = 'Icons/AIE_landscape.jpg';
 
 // Leasee Logo
-config.logo.leasee.src = 'Icons/Leasee/IBM_logo.svg';
+config.logo.leasee.src = 'Icons/AIE_landscape.jpg';
 
 // Scrap Merchant Logo
-config.logo.scrap_merchant.src = 'Icons/Scrap_Merchant/IBM_logo.svg';
+config.logo.scrap_merchant.src = 'Icons/AIE_landscape.jpg';
 
 /******* Participants *******/
 //This is where we define the details of the users for each company (name and password)
