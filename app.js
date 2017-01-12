@@ -314,7 +314,7 @@ let registrar;
 let credentials;
 let webAppAdminPassword = configFile.config.registrar_password;
 if (process.env.VCAP_SERVICES) {
-    console.log('\n[!] VCAP_SERVICES detected');
+    console.log('\n[!] VCAP_SERVICES detected, port will be set to ' + process.env.VCAP_APP_PORT);
     port = process.env.VCAP_APP_PORT;
 } else {
     port = configFile.config.appPort;
@@ -328,6 +328,7 @@ chain.setKeyValStore(hfc.newFileKeyValStore(configFile.config.key_store_location
 //TODO: Change this to be a boolean stating if ssl is enabled or disabled
 //Retrieve the certificate if grpcs is being used
 if(configFile.config.hfcProtocol === 'grpcs'){
+	console.log('\n[i] Protocol requires cert, hunting...');
     // chain.setECDSAModeForGRPC(true);
     pem = fs.readFileSync(__dirname+'/Chaincode/src/vehicle_code/'+configFile.config.certificate_file_name, 'utf8');
 }
@@ -337,7 +338,7 @@ if (process.env.VCAP_SERVICES) { // We are running in bluemix
     credentials = JSON.parse(process.env.VCAP_SERVICES)['ibm-blockchain-5-prod'][0].credentials;
     console.log('\n[!] Running in bluemix');
     if (!pem) {
-        console.log('\n[!] No certificate is available. Will fail to connect to fabric');
+        console.log('\n[!] No certificate is available from '+__dirname+'/Chaincode/src/vehicle_code/'+configFile.config.certificate_file_name+'. Will fail to connect to fabric');
     }
     startup.connectToPeers(chain, credentials.peers, pem);
     startup.connectToCA(chain, credentials.ca, pem);
