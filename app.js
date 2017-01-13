@@ -313,7 +313,7 @@ let server;
 let registrar;
 let credentials;
 let webAppAdminPassword = configFile.config.registrar_password;
-if (process.env.VCAP_SERVICES) {
+if (process.env.VCAP_SERVICES && process.env.VCAP_APP_PORT) {
     console.log('\n[!] VCAP_SERVICES detected, port will be set to ' + process.env.VCAP_APP_PORT);
     port = process.env.VCAP_APP_PORT;
 } else {
