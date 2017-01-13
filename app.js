@@ -331,6 +331,8 @@ if(configFile.config.hfcProtocol === 'grpcs'){
 	console.log('\n[i] Protocol requires cert, hunting...');
     // chain.setECDSAModeForGRPC(true);
     pem = fs.readFileSync(__dirname+'/Chaincode/src/vehicle_code/'+configFile.config.certificate_file_name, 'utf8');
+} else {
+		console.log('\n[i] Protocol not requiring cert');
 }
 
 
