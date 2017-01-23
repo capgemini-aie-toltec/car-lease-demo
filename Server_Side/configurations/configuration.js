@@ -18,7 +18,7 @@ config.hfcProtocol = 'grpcs';                    // If deploying locally, this v
 //--------------------------------------------------------------------------------------------------------------------
 
 config.trace        = true;
-config.traceFile    = __dirname+'/../logs/app_trace.log';     // File where traces should be written to
+config.traceFile    = __dirname+'/../logs/cg_app_trace.log';     // File where traces should be written to
 
 
 //Settings for the nodeJS application server

@@ -56,7 +56,7 @@ let create = function(type, name, data)
     fs.appendFile(configFile.config.traceFile, value, function (err){
         if(err)
         {
-            console.error('UNABLE TO WRITE LOGS TO FILE');
+            console.error('UNABLE TO WRITE LOGS TO FILE ' + configFile.config.traceFile +  ' : ' + err);
         }
     });
 };
