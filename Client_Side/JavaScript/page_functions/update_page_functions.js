@@ -76,6 +76,10 @@ function closeEditTbl()
 	$('#fade').hide();
 }
 
+function isVIMNumeric(n) {
+	  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 function validate(el)
 {
 	
@@ -95,6 +99,10 @@ function validate(el)
 	{
 		
 		$('#errorRw').find('ul').append('<li>VIN must be 15 characters (Currently ' + $('#vin').val().trim().length + ' characters)</li>')
+		failed = true;
+	}
+	if(!isVIMNumeric($('#vin').val().trim())) {
+		$('#errorRw').find('ul').append('<li>VIN must be numeric - no characters</li>')
 		failed = true;
 	}
 	if($('#vin').val().trim() == 0 && $('#hidVin').val().trim() != 0)
